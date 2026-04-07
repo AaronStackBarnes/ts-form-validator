@@ -26,6 +26,15 @@ describe('validateEmail', () => {
   it('rejects multiple @ symbols', () => {
     expect(validateEmail('a@b@c.com').valid).toBe(false);
   });
+
+  it('rejects local part exceeding 64 characters', () => {
+    const longLocal = 'a'.repeat(65) + '@example.com';
+    expect(validateEmail(longLocal).valid).toBe(false);
+  });
+
+  it('rejects emails with invalid format matching missing EMAIL_REGEX coverage', () => {
+    expect(validateEmail('user@').valid).toBe(false);
+  });
 });
 
 describe('normalizeEmail', () => {

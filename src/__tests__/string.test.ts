@@ -31,6 +31,20 @@ describe('validateString', () => {
   it('rejects null when required', () => {
     expect(validateString(null).valid).toBe(false);
   });
+
+  it('rejects non-string inputs', () => {
+    expect(validateString(123).valid).toBe(false);
+  });
+
+  it('rejects blank string when required', () => {
+    expect(validateString('   ', { required: true }).valid).toBe(false);
+  });
+
+  it('preserves whitespace when trim is false', () => {
+    const result = validateString('  hello  ', { trim: false });
+    expect(result.valid).toBe(true);
+    expect(result.value).toBe('  hello  ');
+  });
 });
 
 describe('sanitizeString', () => {

@@ -9,13 +9,13 @@ export interface NumberValidationOptions {
   positive?: boolean;
 }
 
-export interface ValidationResult {
+export interface NumberValidationResult {
   valid: boolean;
   value?: number;
   error?: string;
 }
 
-export function validateNumber(input: unknown, opts: NumberValidationOptions = {}): ValidationResult {
+export function validateNumber(input: unknown, opts: NumberValidationOptions = {}): NumberValidationResult {
   const { min = -Infinity, max = Infinity, integer = false, positive = false } = opts;
 
   const n = typeof input === 'string' ? parseFloat(input) : Number(input);

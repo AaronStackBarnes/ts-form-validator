@@ -45,7 +45,7 @@ if [ "${TS_NO_TELEMETRY:-0}" != "1" ]; then
 import sys,json
 try:
   data=json.load(sys.stdin)
-  b='feat/add-retry-utils'
+  b='feat/date-url-validators'
   for p in data:
     if p['head']['ref']==b:
       print(p['number']); break

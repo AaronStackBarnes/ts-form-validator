@@ -9,6 +9,12 @@ export interface ValidationResult {
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
 
+/**
+ * Validates an email address.
+ *
+ * @param email - The email address to validate.
+ * @returns An object containing a `valid` boolean indicating if the email is valid, and an `error` string if not.
+ */
 export function validateEmail(email: string): ValidationResult {
   if (!email || typeof email !== 'string') {
     return { valid: false, error: 'Email must be a non-empty string' };
@@ -30,10 +36,22 @@ export function validateEmail(email: string): ValidationResult {
   return { valid: true };
 }
 
+/**
+ * Normalizes an email address by trimming whitespace and converting to lowercase.
+ *
+ * @param email - The email address to normalize.
+ * @returns The normalized email address.
+ */
 export function normalizeEmail(email: string): string {
   return email.trim().toLowerCase();
 }
 
+/**
+ * Extracts the domain from an email address.
+ *
+ * @param email - The email address to extract the domain from.
+ * @returns The extracted domain in lowercase, or `null` if the email is invalid.
+ */
 export function extractDomain(email: string): string | null {
   const result = validateEmail(email);
   if (!result.valid) return null;

@@ -16,6 +16,13 @@ export interface ValidationResult {
   error?: string;
 }
 
+/**
+ * Validates a string based on the provided options.
+ *
+ * @param input - The value to validate, which should be a string.
+ * @param opts - Validation options such as minLength, maxLength, pattern, trim, and required.
+ * @returns An object containing a `valid` boolean, the processed `value` if valid, and an `error` string if not.
+ */
 export function validateString(input: unknown, opts: StringValidationOptions = {}): ValidationResult {
   const { minLength = 0, maxLength = Infinity, pattern, trim = true, required = true } = opts;
 
@@ -49,6 +56,12 @@ export function validateString(input: unknown, opts: StringValidationOptions = {
   return { valid: true, value };
 }
 
+/**
+ * Sanitizes a string by escaping HTML characters (&, <, >, ", ').
+ *
+ * @param input - The string to sanitize.
+ * @returns The sanitized string with HTML entities.
+ */
 export function sanitizeString(input: string): string {
   return input
     .replace(/&/g, '&amp;')
@@ -58,6 +71,12 @@ export function sanitizeString(input: string): string {
     .replace(/'/g, '&#x27;');
 }
 
+/**
+ * Converts a string into a URL-friendly slug.
+ *
+ * @param input - The string to slugify.
+ * @returns The slugified string.
+ */
 export function slugify(input: string): string {
   return input
     .toLowerCase()

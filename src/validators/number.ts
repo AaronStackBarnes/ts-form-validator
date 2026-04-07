@@ -15,6 +15,13 @@ export interface ValidationResult {
   error?: string;
 }
 
+/**
+ * Validates a number based on the provided options.
+ *
+ * @param input - The value to validate, which can be a number or a string that parses to a number.
+ * @param opts - Validation options such as min, max, integer, and positive.
+ * @returns An object containing a `valid` boolean, the parsed `value` if valid, and an `error` string if not.
+ */
 export function validateNumber(input: unknown, opts: NumberValidationOptions = {}): ValidationResult {
   const { min = -Infinity, max = Infinity, integer = false, positive = false } = opts;
 
@@ -43,6 +50,14 @@ export function validateNumber(input: unknown, opts: NumberValidationOptions = {
   return { valid: true, value: n };
 }
 
+/**
+ * Clamps a number within the inclusive range specified by the lower and upper bounds.
+ *
+ * @param value - The number to clamp.
+ * @param min - The minimum allowed value.
+ * @param max - The maximum allowed value.
+ * @returns The clamped number.
+ */
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }

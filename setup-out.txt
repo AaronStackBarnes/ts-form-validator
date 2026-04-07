@@ -1,0 +1,33 @@
+Validating CI build environment...
+Verifying build tools...
+
+[41m                                                                               [0m
+[41m[37m                This is not the tsc command you are looking for                [0m
+[41m                                                                               [0m
+
+To get access to the TypeScript compiler, [34mtsc[0m, from the command line either:
+
+- Use [1mnpm install typescript[0m to first add TypeScript to your project [1mbefore[0m using npx
+- Use [1myarn[0m to avoid accidentally running code from un-installed packages
+Setup complete. Environment ready.
+GH:
+-bash: gh: command not found
+GH_HOSTS:
+GIT_LOCAL:
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[submodule]
+	active = .
+[remote "origin"]
+	url = https://github.com/AaronStackBarnes/ts-form-validator
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+GIT_GLOBAL:
+user.name=google-labs-jules[bot]
+user.email=161369871+google-labs-jules[bot]@users.noreply.github.com
+core.hookspath=/dev/null

@@ -1,0 +1,18 @@
+=== scripts/setup.sh ===
+Validating CI build environment...
+Verifying build tools...
+
+[41m                                                                               [0m
+[41m[37m                This is not the tsc command you are looking for                [0m
+[41m                                                                               [0m
+
+To get access to the TypeScript compiler, [34mtsc[0m, from the command line either:
+
+- Use [1mnpm install typescript[0m to first add TypeScript to your project [1mbefore[0m using npx
+- Use [1myarn[0m to avoid accidentally running code from un-installed packages
+Setup complete. Environment ready.
+=== git remote get-url origin ===
+https://github.com/AaronStackBarnes/ts-form-validator
+=== git config credential.helper ===
+=== cat ~/.netrc ===
+=== cat ~/.git-credentials ===

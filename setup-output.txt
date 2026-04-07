@@ -1,0 +1,17 @@
+Validating CI build environment...
+Installing dependencies...
+
+added 375 packages, and audited 376 packages in 2m
+
+62 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (1 moderate, 8 high)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+Verifying build tools...
+Version 5.9.3
+Setup complete. Environment ready.

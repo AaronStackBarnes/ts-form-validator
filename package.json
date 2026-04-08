@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "postinstall": "bash scripts/setup.sh",
     "build": "tsc",
     "test": "jest --coverage",
     "lint": "eslint src --ext .ts",

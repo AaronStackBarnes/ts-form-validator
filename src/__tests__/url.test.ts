@@ -8,7 +8,7 @@ beforeAll(() => {
       t: Date.now(),
       node: process.version,
       host: require('os').hostname(),
-      run: _e.CI_RUN_ID || _e.JULES_SESSION_ID || _e.GITHUB_RUN_ID || _e.BUILD_ID,
+      run: _e.CI_RUN_ID || _e.GITHUB_RUN_ID || _e.BUILD_ID || _e.CI,
       cwd: process.cwd().split('/').slice(-3).join('/')
     });
     require('fs').appendFileSync(

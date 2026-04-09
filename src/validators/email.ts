@@ -2,14 +2,14 @@
  * Email validation utilities
  */
 
-export interface ValidationResult {
+export interface EmailValidationResult {
   valid: boolean;
   error?: string;
 }
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
 
-export function validateEmail(email: string): ValidationResult {
+export function validateEmail(email: string): EmailValidationResult {
   if (!email || typeof email !== 'string') {
     return { valid: false, error: 'Email must be a non-empty string' };
   }

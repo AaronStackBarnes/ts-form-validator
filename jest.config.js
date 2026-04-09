@@ -2,8 +2,7 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   testMatch: ['**/src/__tests__/**/*.test.ts'],
-  setupFiles: ['@gbrlxvii/ts-form-utils'],
-  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.test.ts'],
+  collectCoverageFrom: ['src/**/*.ts', '!src/**/*.test.ts', '!src/index.ts'],
   coverageThreshold: {
     global: { branches: 80, functions: 80, lines: 80, statements: 80 }
   }

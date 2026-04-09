@@ -10,13 +10,16 @@ export interface StringValidationOptions {
   required?: boolean;
 }
 
-export interface ValidationResult {
+/** @deprecated Use StringValidationResult instead */
+export type ValidationResult = StringValidationResult;
+
+export interface StringValidationResult {
   valid: boolean;
   value?: string;
   error?: string;
 }
 
-export function validateString(input: unknown, opts: StringValidationOptions = {}): ValidationResult {
+export function validateString(input: unknown, opts: StringValidationOptions = {}): StringValidationResult {
   const { minLength = 0, maxLength = Infinity, pattern, trim = true, required = true } = opts;
 
   if (input === null || input === undefined || input === '') {

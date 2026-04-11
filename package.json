@@ -1,6 +1,6 @@
 {
   "name": "ts-form-validator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight TypeScript form validation library with zero dependencies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,10 @@
     "validation",
     "form",
     "typescript",
-    "schema"
+    "schema",
+    "url",
+    "date",
+    "phone"
   ],
   "author": "Aaron Barnes",
   "license": "MIT",
@@ -25,6 +28,7 @@
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.0.0",
     "jest": "^29.5.0",
+    "ts-form-helpers": "^1.0.0",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.0"
   }

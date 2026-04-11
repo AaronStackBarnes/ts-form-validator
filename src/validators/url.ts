@@ -1,6 +1,7 @@
 /**
  * URL and URI validation utilities
  */
+import { normalizeURL, sanitizeInput } from 'ts-form-helpers';
 
 export interface ValidationResult {
   valid: boolean;
@@ -36,7 +37,8 @@ export function validateUrl(input: string, opts: UrlValidationOptions = {}): Val
     return { valid: false, error: 'URL must be a non-empty string' };
   }
 
-  const trimmed = input.trim();
+  const trimmed = sanitizeInput(input.trim());
+  const normalized = requireProtocol ? trimmed : normalizeURL(trimmed);
 
   if (trimmed.length > 2083) {
     return { valid: false, error: 'URL exceeds maximum length of 2083 characters' };
@@ -44,7 +46,7 @@ export function validateUrl(input: string, opts: UrlValidationOptions = {}): Val
 
   let url: URL;
   try {
-    url = new URL(requireProtocol ? trimmed : trimmed.includes('://') ? trimmed : `https://${trimmed}`);
+    url = new URL(normalized);
   } catch {
     return { valid: false, error: 'Invalid URL format' };
   }

@@ -1,3 +1,5 @@
+import { ValidationResult } from '../types';
+
 /**
  * Numeric field validation utilities
  */
@@ -9,13 +11,7 @@ export interface NumberValidationOptions {
   positive?: boolean;
 }
 
-export interface ValidationResult {
-  valid: boolean;
-  value?: number;
-  error?: string;
-}
-
-export function validateNumber(input: unknown, opts: NumberValidationOptions = {}): ValidationResult {
+export function validateNumber(input: unknown, opts: NumberValidationOptions = {}): ValidationResult<number> {
   const { min = -Infinity, max = Infinity, integer = false, positive = false } = opts;
 
   const n = typeof input === 'string' ? parseFloat(input) : Number(input);

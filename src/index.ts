@@ -1,3 +1,3 @@
 export * from './validators/email';
-export * from './validators/string';
-export * from './validators/number';
+export { StringValidationOptions, validateString, sanitizeString, slugify } from './validators/string';
+export { NumberValidationOptions, validateNumber, clamp } from './validators/number';

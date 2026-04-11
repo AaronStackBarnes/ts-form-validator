@@ -1,0 +1,25 @@
+
+> ts-form-validator@1.0.0 test
+> jest --coverage
+
+PASS src/__tests__/number.test.ts
+PASS src/__tests__/email.test.ts
+PASS src/__tests__/string.test.ts
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------|---------|----------|---------|---------|-------------------
+All files       |    82.6 |    89.36 |   61.53 |    88.7 |
+ src            |       0 |      100 |       0 |       0 |
+  index.ts      |       0 |      100 |       0 |       0 | 1-3
+ src/validators |   93.44 |    89.36 |     100 |   93.22 |
+  email.ts      |    91.3 |       75 |     100 |    90.9 | 25,28
+  number.ts     |     100 |      100 |     100 |     100 |
+  string.ts     |    90.9 |    85.71 |     100 |   90.47 | 28,34
+----------------|---------|----------|---------|---------|-------------------
+Jest: "global" coverage threshold for functions (80%) not met: 61.53%
+
+Test Suites: 3 passed, 3 total
+Tests:       23 passed, 23 total
+Snapshots:   0 total
+Time:        4.685 s
+Ran all test suites.

@@ -1,6 +1,7 @@
 /**
  * String field validation utilities
  */
+import { ValidationResult } from '../types';
 
 export interface StringValidationOptions {
   minLength?: number;
@@ -10,13 +11,7 @@ export interface StringValidationOptions {
   required?: boolean;
 }
 
-export interface ValidationResult {
-  valid: boolean;
-  value?: string;
-  error?: string;
-}
-
-export function validateString(input: unknown, opts: StringValidationOptions = {}): ValidationResult {
+export function validateString(input: unknown, opts: StringValidationOptions = {}): ValidationResult<string> {
   const { minLength = 0, maxLength = Infinity, pattern, trim = true, required = true } = opts;
 
   if (input === null || input === undefined || input === '') {

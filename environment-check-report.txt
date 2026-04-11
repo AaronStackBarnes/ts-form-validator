@@ -1,0 +1,27 @@
+=== Environment Diagnostic Report ===
+Timestamp: 2026-04-11T19:47:29.137Z
+Node.js Version: v22.22.1
+Platform: linux
+Architecture: x64
+Memory: 8 GB
+CPUs: 4
+
+=== Project Dependencies ===
+Dependencies:
+  (none)
+Dev Dependencies:
+  - @types/jest: ^29.5.0
+  - @types/node: ^20.0.0
+  - @typescript-eslint/eslint-plugin: ^6.0.0
+  - @typescript-eslint/parser: ^6.0.0
+  - eslint: ^8.0.0
+  - jest: ^29.5.0
+  - ts-jest: ^29.1.0
+  - typescript: ^5.0.0
+
+=== NPM Audit Summary ===
+Total Vulnerabilities: 6
+  - Critical: 0
+  - High: 6
+  - Moderate: 0
+  - Low: 0

@@ -1,15 +1,11 @@
 /**
  * Email validation utilities
  */
-
-export interface ValidationResult {
-  valid: boolean;
-  error?: string;
-}
+import { ValidationResult } from '../types';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
 
-export function validateEmail(email: string): ValidationResult {
+export function validateEmail(email: string): ValidationResult<string> {
   if (!email || typeof email !== 'string') {
     return { valid: false, error: 'Email must be a non-empty string' };
   }
@@ -27,7 +23,7 @@ export function validateEmail(email: string): ValidationResult {
   if (!EMAIL_REGEX.test(trimmed)) {
     return { valid: false, error: 'Invalid email format' };
   }
-  return { valid: true };
+  return { valid: true, value: trimmed };
 }
 
 export function normalizeEmail(email: string): string {
